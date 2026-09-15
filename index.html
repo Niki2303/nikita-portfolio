@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nikita Tayal — Portfolio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#FAFAF8;
+    --ink:#15191C;
+    --teal:#1B4B43;
+    --teal-soft:#2E6459;
+    --amber:#E0982F;
+    --line:#DDD9D0;
+    --muted:#5B6560;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:var(--paper);
+    color:var(--ink);
+    font-family:'Inter',sans-serif;
+    -webkit-font-smoothing:antialiased;
+  }
+  a{color:inherit;}
+  .wrap{max-width:920px;margin:0 auto;padding:0 28px;}
+
+  /* Nav */
+  nav{
+    display:flex;justify-content:space-between;align-items:center;
+    padding:28px 0;
+  }
+  nav .mark{font-family:'JetBrains Mono',monospace;font-size:14px;letter-spacing:0.02em;color:var(--teal);}
+  nav ul{list-style:none;display:flex;gap:28px;margin:0;padding:0;}
+  nav a{text-decoration:none;font-size:14px;color:var(--muted);transition:color .15s ease;}
+  nav a:hover{color:var(--ink);}
+
+  /* Hero */
+  header.hero{padding:64px 0 96px;}
+  .role{
+    font-family:'JetBrains Mono',monospace;
+    font-size:13px;
+    color:var(--teal-soft);
+    margin:0 0 18px;
+  }
+  h1{
+    font-family:'Fraunces',serif;
+    font-weight:500;
+    font-size:clamp(40px,6vw,64px);
+    line-height:1.05;
+    margin:0 0 24px;
+    max-width:12ch;
+  }
+  .hero-sub{
+    font-size:18px;
+    line-height:1.6;
+    color:var(--muted);
+    max-width:52ch;
+    margin:0 0 32px;
+  }
+  .hero-links{display:flex;gap:16px;flex-wrap:wrap;}
+  .btn{
+    display:inline-block;
+    padding:12px 22px;
+    border-radius:3px;
+    font-size:14px;
+    font-weight:500;
+    text-decoration:none;
+    border:1px solid var(--ink);
+  }
+  .btn.primary{background:var(--ink);color:var(--paper);}
+  .btn.ghost{background:transparent;color:var(--ink);}
+
+  section{padding:64px 0;border-top:1px solid var(--line);}
+  .section-label{
+    font-family:'JetBrains Mono',monospace;
+    font-size:13px;
+    color:var(--teal-soft);
+    margin:0 0 20px;
+  }
+  h2{
+    font-family:'Fraunces',serif;
+    font-weight:500;
+    font-size:30px;
+    margin:0 0 24px;
+  }
+
+  /* About */
+  .about-text{font-size:17px;line-height:1.75;color:var(--ink);max-width:64ch;}
+  .about-text p{margin:0 0 18px;}
+  .skills{display:flex;flex-wrap:wrap;gap:10px;margin-top:28px;}
+  .skill{
+    font-family:'JetBrains Mono',monospace;
+    font-size:12.5px;
+    padding:6px 12px;
+    border:1px solid var(--line);
+    border-radius:3px;
+    color:var(--teal);
+  }
+
+  /* Projects */
+  .project{
+    display:grid;
+    grid-template-columns:56px 1fr;
+    gap:20px;
+    padding:28px 0;
+    border-bottom:1px solid var(--line);
+  }
+  .project:last-child{border-bottom:none;}
+  .project .num{
+    font-family:'JetBrains Mono',monospace;
+    font-size:14px;
+    color:var(--amber);
+    padding-top:4px;
+  }
+  .project h3{
+    font-family:'Fraunces',serif;
+    font-weight:500;
+    font-size:22px;
+    margin:0 0 8px;
+  }
+  .project p{
+    font-size:15px;
+    line-height:1.65;
+    color:var(--muted);
+    margin:0 0 12px;
+    max-width:58ch;
+  }
+  .project .tags{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:10px;}
+  .project .tag{font-size:12px;color:var(--teal-soft);font-family:'JetBrains Mono',monospace;}
+  .project a.link{font-size:14px;color:var(--ink);text-decoration:underline;text-decoration-color:var(--amber);text-underline-offset:3px;}
+
+  /* Contact */
+  .contact-row{
+    display:flex;justify-content:space-between;align-items:flex-end;
+    flex-wrap:wrap;gap:24px;
+  }
+  .contact-text{font-size:17px;line-height:1.7;color:var(--ink);max-width:44ch;}
+  .contact-links{display:flex;flex-direction:column;gap:10px;align-items:flex-start;}
+  .contact-links a{font-size:15px;text-decoration:none;border-bottom:1px solid var(--line);padding-bottom:2px;}
+  .contact-links a:hover{border-color:var(--amber);}
+
+  footer{padding:36px 0 56px;}
+  footer p{font-size:13px;color:var(--muted);margin:0;}
+
+  @media (max-width:600px){
+    nav ul{gap:16px;}
+    .project{grid-template-columns:32px 1fr;}
+  }
+</style>
+</head>
+<body>
+
+<div class="wrap">
+  <nav>
+    <span class="mark">nikita tayal</span>
+    <ul>
+      <li><a href="#about">About</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <header class="hero">
+    <p class="role">Software &amp; Machine Learning Engineer</p>
+    <h1>I build things, then figure out why they broke.</h1>
+    <p class="hero-sub">
+      This is a placeholder introduction — swap in a line or two about what you actually
+      work on, what you're curious about, and what kind of problems you like solving.
+    </p>
+    <div class="hero-links">
+      <a class="btn primary" href="#projects">See projects</a>
+      <a class="btn ghost" href="#contact">Get in touch</a>
+    </div>
+  </header>
+
+  <section id="about">
+    <p class="section-label">// about</p>
+    <h2>A little about me</h2>
+    <div class="about-text">
+      <p>
+        Replace this paragraph with your real background — where you studied, what you've
+        worked on, and what got you into engineering or machine learning in the first place.
+      </p>
+      <p>
+        Add a second paragraph on how you like to work: languages and tools you reach for,
+        the kind of teams you thrive on, or a detail that makes you memorable.
+      </p>
+    </div>
+    <div class="skills">
+      <span class="skill">Python</span>
+      <span class="skill">Machine Learning</span>
+      <span class="skill">JavaScript</span>
+      <span class="skill">SQL</span>
+      <span class="skill">Git</span>
+    </div>
+  </section>
+
+  <section id="projects">
+    <p class="section-label">// projects</p>
+    <h2>Selected work</h2>
+
+    <div class="project">
+      <span class="num">01</span>
+      <div>
+        <h3>Project One</h3>
+        <p>One or two sentences on what this project does, the problem it solves, and your
+          role in building it.</p>
+        <div class="tags"><span class="tag">Python</span><span class="tag">scikit-learn</span></div>
+        <a class="link" href="#">View on GitHub →</a>
+      </div>
+    </div>
+
+    <div class="project">
+      <span class="num">02</span>
+      <div>
+        <h3>Project Two</h3>
+        <p>Same format — what it is, why you built it, and what you learned or shipped.</p>
+        <div class="tags"><span class="tag">Node.js</span><span class="tag">REST API</span></div>
+        <a class="link" href="#">View on GitHub →</a>
+      </div>
+    </div>
+
+    <div class="project">
+      <span class="num">03</span>
+      <div>
+        <h3>Project Three</h3>
+        <p>A third project, or a tutorial series / learning log if you'd rather highlight
+          growth over polish.</p>
+        <div class="tags"><span class="tag">Notes</span><span class="tag">Tutorials</span></div>
+        <a class="link" href="#">View on GitHub →</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <p class="section-label">// contact</p>
+    <h2>Let's talk</h2>
+    <div class="contact-row">
+      <p class="contact-text">
+        Open to opportunities and interesting problems — the easiest way to reach me is by
+        email, or check out what I've been building on GitHub.
+      </p>
+      <div class="contact-links">
+        <a href="mailto:you@example.com">you@example.com</a>
+        <a href="https://github.com/Niki2303" target="_blank" rel="noopener">github.com/Niki2303</a>
+        <a href="#">linkedin.com/in/your-handle</a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2026 Nikita Tayal. Built with plain HTML &amp; CSS.</p>
+  </footer>
+</div>
+
+</body>
+</html>
